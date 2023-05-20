@@ -1,0 +1,23 @@
+[
+    {
+        "firstName": "Toni",
+        "lastName": "Kroos",
+        "favoriteColor": "white",
+        "age":33,
+        "cash":33000
+    },
+    {
+        "firstName": "Luka",
+        "lastName": "Modric",
+        "favoriteColor": "white",
+        "age":37,
+        "cash":37000
+    },
+    {
+        "firstName": "Karim",
+        "lastName": "Benzema",
+        "favoriteColor": "blue",
+        "age":35,
+        "cash":35000
+    }
+]
