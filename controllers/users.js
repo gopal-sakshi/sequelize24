@@ -4,11 +4,24 @@ var router = express.Router();
 const { Op } = require("sequelize");
 
 router.get('/getAll', async (req, res) => { 
-    users.findAll({}).then(data => res.status(200).send(data))
+    users.findAll({}).then(data => res.status(200).send(data));    
+});
+
+router.get('/findOne', async (req, res) => { 
+    users.findOne({ where: { favouriteColor: 'white' } });
 });
 
 router.get('/getSomeFields', async (req, res) => { 
     users.findAll({attributes:['firstName', 'lastName']}).then(data => res.status(200).send(data))
+});
+
+router.get('/findAndCountAll', async (req, res) => { 
+    users.findAndCountAll({ where: { favoriteColor: 'white' }, attributes:['firstName', 'lastName']}).then(data => res.status(200).send(data))
+});
+
+
+router.get('/findByPk', async (req, res) => { 
+    users.findByPk(2).then(data => res.status(200).send(data))
 });
 
 router.get('/where1', async (req, res) => {

@@ -1,8 +1,10 @@
-const {Sequelize, DataTypes} = require("sequelize");
+const { Sequelize, DataTypes, Model } = require("sequelize");
 const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: "C:\\Users\\GopAL\\Desktop\\backEnd\\sequelize24\\db24\\sqllite24.db"
 });
+
+// APPROACH I
 const user = sequelize.define("user", {
     firstName: { type: DataTypes.STRING, allowNull: false },
     lastName: { type: DataTypes.STRING },
@@ -11,7 +13,10 @@ const user = sequelize.define("user", {
     age: DataTypes.INTEGER,
     cash: DataTypes.INTEGER,
     // status:DataTypes.BOOLEAN,
-}, {timestamps : false});
+}, { timestamps: false });
 
 user.sync();
 module.exports = user;
+
+
+/*********************************************************************************************/
